@@ -31,6 +31,6 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <span>©️ 2021 depth401.</span>
     </footer>
   </div>
-);
+)
 
-export default Layout;
+export default Layout
