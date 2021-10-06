@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const FirstPost = () => (
-    <h1>First Post</h1>
-)
+const FirstPost = () => <h1>First Post</h1>;
 
-export default FirstPost
+export default FirstPost;
