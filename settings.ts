@@ -1,6 +1,7 @@
 const settings = {
   siteMetadata: {
     title: '啓蒙の坂',
+    author: 'depth401',
   },
 };
 

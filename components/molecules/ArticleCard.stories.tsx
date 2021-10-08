@@ -1,20 +1,28 @@
-import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import Title from './Title';
+import ArticleCard from './ArticleCard';
 
 export default {
-  title: 'Design System/Atoms/Title',
-  component: Title,
+  title: 'Design System/Molecules/ArticleCard',
+  component: ArticleCard,
   argTypes: {
+    href: {
+      defaultValue: '/',
+    },
     title: {
-      defaultValue: '啓蒙の坂',
+      defaultValue: 'タイトル',
       type: { name: 'string', required: true },
     },
+    overview: {
+      defaultValue: '概要',
+      type: { name: 'string', required: false },
+    },
   },
-} as ComponentMeta<typeof Title>;
+} as ComponentMeta<typeof ArticleCard>;
 
-const Template: ComponentStory<typeof Title> = (args) => <Title {...args} />;
+const Template: ComponentStory<typeof ArticleCard> = (args) => (
+  <ArticleCard {...args} />
+);
 
 export const Pc = Template.bind({});
 
