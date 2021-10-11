@@ -21,7 +21,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
       </Head>
       <Header title={settings.siteMetadata.title} />
       <main className='flex-1 overflow-y-auto m-5'>
-        <div className='max-w-3xl mx-auto'>{children}</div>
+        <div className='max-w-6xl mx-auto'>{children}</div>
       </main>
       <Footer owner='depth401' />
     </div>

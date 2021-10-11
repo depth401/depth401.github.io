@@ -1,17 +1,33 @@
-import Link from 'next/link';
 import React from 'react';
-import Tag from 'components/atoms/Tag';
+import ArticleCards from 'components/organisms/ArticleCards';
 import Layout from 'components/templates/Layout';
+import { getSortedPostsDate, PostContent } from 'lib/posts';
 
-const IndexPage = () => {
+type Props = {
+  allPostsData: PostContent[];
+};
+
+export const getStaticProps = async () => {
+  const allPostsData = getSortedPostsDate();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+};
+
+const IndexPage = ({ allPostsData }: Props) => {
+  const cards = allPostsData.map(({ slug, frontmatter }) => {
+    return {
+      href: `/posts/${slug}`,
+      title: frontmatter.title,
+      overview: frontmatter.overview,
+      tags: frontmatter.tags,
+    };
+  });
   return (
     <Layout title='Home'>
-      <p>
-        <Link href='/about'>
-          <a>About</a>
-        </Link>
-      </p>
-      <Tag text='テスト' href='/about' />
+      <ArticleCards cards={cards} />
     </Layout>
   );
 };
