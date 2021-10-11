@@ -17,6 +17,28 @@ export default {
       defaultValue: '概要',
       type: { name: 'string', required: false },
     },
+    tags: {
+      defaultValue: [
+        'Java',
+        'JavaScript',
+        'CSS',
+        'HTML',
+        'GitHub',
+        'Haskell',
+        'Scala',
+        'Terminal',
+        'IntelliJ',
+        'Rust',
+        'TypeScript',
+        'Elm',
+        'Emacs',
+        'Spacemacs',
+        'Git',
+        'Ubuntu',
+        'Unknown',
+      ],
+      type: { name: 'array', required: true },
+    },
   },
 } as ComponentMeta<typeof ArticleCard>;
 

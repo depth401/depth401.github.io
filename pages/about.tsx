@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import Layout from 'components/layouts/Layout';
+import Layout from 'components/templates/Layout';
 
 const AboutPage = () => (
   <Layout title='About'>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Tag from 'components/atoms/Tag';
-import Layout from 'components/layouts/Layout';
+import Layout from 'components/templates/Layout';
 
 const IndexPage = () => {
   return (
@@ -11,7 +11,7 @@ const IndexPage = () => {
           <a>About</a>
         </Link>
       </p>
-      <Tag name='テスト' href='/about' />
+      <Tag text='テスト' href='/about' />
     </Layout>
   );
 };

@@ -8,7 +8,7 @@ type Props = {
 const Title = ({ title }: Props) => (
   <Link href='/'>
     <a
-      className='text-xl sm:text-2xl md:text-3xl text-black'
+      className='text-xl text-black'
       style={{ fontFamily: "'Kaisei Decol', self" }}
     >
       {title}
