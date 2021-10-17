@@ -1,11 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import rehypeDocument from 'rehype-document';
 import rehypeFormat from 'rehype-format';
+import rehypePrism from 'rehype-prism-plus';
 import rehypeStringify from 'rehype-stringify';
-import remark from 'remark';
-import html from 'remark-html';
+import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
@@ -60,7 +59,9 @@ export const getPostBySlug = async (slug: string): Promise<PostContent> => {
   const { data, content } = matter(fileContents);
   const processedContent = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypePrism)
     .use(rehypeFormat)
     .use(rehypeStringify)
     .process(content);

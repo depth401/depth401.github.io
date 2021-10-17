@@ -1,3 +1,5 @@
+const urlPrefix = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : '';
+
 module.exports = {
   webpack5: function (config) {
     config.module.rules.push({
@@ -6,4 +8,7 @@ module.exports = {
     });
     return config;
   },
+  assetPrefix: urlPrefix,
+  basePath: urlPrefix,
+  trailingSlash: true,
 };

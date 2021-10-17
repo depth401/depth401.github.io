@@ -1,18 +1,36 @@
+// @ts-ignore
+import 'prism-themes/themes/prism-vs.css';
 import React from 'react';
+import Tag from 'components/atoms/Tag';
 import Layout from 'components/templates/Layout';
 import { getAllPostSlugs, getPostBySlug, PostContent } from 'lib/posts';
 
 type Props = PostContent;
 
-const FirstPost = ({ slug, frontmatter, contentHtml }: Props) => {
+const Post = ({ slug, frontmatter, contentHtml }: Props) => {
   return (
     <Layout>
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }}></div>
+      <div className='mx-auto max-w-3xl'>
+        <div className='justify-center'>
+          <h1 className='text-4xl font-bold pb-4'>{frontmatter.title}</h1>
+          <div className='flex flex-wrap flex-row gap-x-1'>
+            {frontmatter.tags.map((tag, index) => (
+              <span key={index} className='h-auto pr-2 pt-2'>
+                <Tag text={tag} />
+              </span>
+            ))}
+          </div>
+        </div>
+        <div
+          className='markdown mt-10 mb-10'
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        ></div>
+      </div>
     </Layout>
   );
 };
 
-export default FirstPost;
+export default Post;
 
 type Params = {
   params: {

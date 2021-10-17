@@ -2,6 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+body {
   font-family: 'Noto Serif JP', sans-serif;
+}
+
+.markdown h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold font-mono;
+  @apply mb-2;
+}
+
+.markdown h1 {
+  @apply text-4xl;
+}
+
+.markdown h2 {
+  @apply text-3xl;
+}
+
+.markdown h3 {
+  @apply text-2xl;
+}
+
+.markdown h4 {
+  @apply text-xl;
+}
+
+.markdown h5 {
+  @apply text-lg;
+}
+
+.markdown h6 {
+  @apply text-base;
+}
+
+.markdown p,
+blockquote,
+ul {
+  @apply mt-3 mb-3;
+}
+
+.markdown blockquote {
+  @apply border-l-4;
+  @apply ml-6 pl-3;
+}
+
+.markdown table {
+  @apply table-auto;
+}
+
+.markdown ul {
+  @apply ml-6;
+}
+
+.markdown pre {
+  @apply mb-4 p-3;
+  @apply border;
+  overflow-x: auto;
+}
+
+/**
+ * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .code-highlight.
+ */
+.code-highlight {
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+.code-line {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  border-left-width: 4px;
+  border-left-color: rgba(31, 41, 55, 0.295); /* Set code block color */
+}
+
+.highlight-line {
+  margin-left: -16px;
+  margin-right: -16px;
+  background-color: rgba(55, 65, 81, 0.1); /* Set highlight bg color */
+  border-left-width: 4px;
+  border-left-color: rgb(59, 130, 246); /* Set highlight accent border color */
+}
+
+.line-number::before {
+  padding-right: 16px;
+  color: rgb(156, 163, 175); /* Line number color */
+  content: attr(line);
 }
