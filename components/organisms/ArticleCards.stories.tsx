@@ -34,5 +34,6 @@ Template.args = {
       'Ubuntu',
       'Unknown',
     ],
+    updatedAt: '2020-01-01',
   })),
 };

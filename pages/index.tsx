@@ -20,9 +20,7 @@ const IndexPage = ({ allPostsData }: Props) => {
   const cards = allPostsData.map(({ slug, frontmatter }) => {
     return {
       href: `/posts/${slug}`,
-      title: frontmatter.title,
-      overview: frontmatter.overview,
-      tags: frontmatter.tags,
+      ...frontmatter,
     };
   });
   return (

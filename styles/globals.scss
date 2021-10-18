@@ -6,63 +6,101 @@ body {
   font-family: 'Noto Serif JP', sans-serif;
 }
 
-.markdown h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-bold font-mono;
-  @apply mb-2;
-}
+.markdown {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold font-mono;
+    @apply mt-10 mb-5;
+  }
 
-.markdown h1 {
-  @apply text-4xl;
-}
+  h1 {
+    @apply text-4xl;
+  }
 
-.markdown h2 {
-  @apply text-3xl;
-}
+  h2 {
+    @apply text-3xl;
+  }
 
-.markdown h3 {
-  @apply text-2xl;
-}
+  h3 {
+    @apply text-2xl;
+  }
 
-.markdown h4 {
-  @apply text-xl;
-}
+  h4 {
+    @apply text-xl;
+  }
 
-.markdown h5 {
-  @apply text-lg;
-}
+  h5 {
+    @apply text-lg;
+  }
 
-.markdown h6 {
-  @apply text-base;
-}
+  h6 {
+    @apply text-base;
+  }
 
-.markdown p,
-blockquote,
-ul {
-  @apply mt-3 mb-3;
-}
+  p,
+  blockquote,
+  ul,
+  ol {
+    @apply mt-4 mb-4;
+  }
 
-.markdown blockquote {
-  @apply border-l-4;
-  @apply ml-6 pl-3;
-}
+  ul,
+  ol {
+    @apply ml-4;
+    @apply list-inside;
+  }
 
-.markdown table {
-  @apply table-auto;
-}
+  li {
+    @apply list-disc;
+  }
 
-.markdown ul {
-  @apply ml-6;
-}
+  .task-list-item {
+    @apply list-none;
+  }
 
-.markdown pre {
-  @apply mb-4 p-3;
-  @apply border;
-  overflow-x: auto;
+  ol > li {
+    @apply list-decimal;
+  }
+
+  blockquote {
+    @apply border-l-4;
+    @apply ml-4 pl-3;
+  }
+
+  hr {
+    @apply mt-6 mb-6;
+  }
+
+  table {
+    @apply table-auto;
+  }
+
+  a {
+    @apply text-blue-500;
+  }
+
+  h1 > a,
+  h2 > a,
+  h3 > a,
+  h4 > a,
+  h5 > a,
+  h6 > a {
+    @apply text-black;
+  }
+
+  img {
+    @apply mt-6 mt-6;
+  }
+
+  pre {
+    @apply mb-4 p-3;
+    @apply border;
+    overflow-x: auto;
+  }
 }
 
 /**

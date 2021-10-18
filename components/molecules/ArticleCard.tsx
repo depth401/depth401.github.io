@@ -1,3 +1,4 @@
+import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import Tag from 'components/atoms/Tag';
 
@@ -6,9 +7,10 @@ export type Props = {
   href: string;
   overview: string;
   tags: string[];
+  updatedAt: string;
 };
 
-const ArticleCard = ({ title, href, overview, tags }: Props) => (
+const ArticleCard = ({ title, href, overview, tags, updatedAt }: Props) => (
   <Link href={href}>
     <a>
       <div className='p-5 border border-solid border-opacity-0 hover:border-opacity-100 rounded-lg hover:shadow-md hover:border-gray-300'>
@@ -22,7 +24,7 @@ const ArticleCard = ({ title, href, overview, tags }: Props) => (
           ))}
         </div>
         <div className='flex justify-end pt-2 text-sm text-gray-500'>
-          2021年1月1日
+          {format(parseISO(updatedAt), 'yyyy年M月d日')}
         </div>
       </div>
     </a>

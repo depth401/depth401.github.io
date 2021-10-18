@@ -20,7 +20,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
       <Header title={settings.siteMetadata.title} />
-      <main className='flex-1 overflow-y-auto p-5'>
+      <main className='flex-1 p-5'>
         <div className='max-w-6xl mx-auto'>{children}</div>
       </main>
       <Footer owner='depth401' />

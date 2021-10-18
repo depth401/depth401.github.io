@@ -1,4 +1,3 @@
-// @ts-ignore
 import 'prism-themes/themes/prism-vs.css';
 import React from 'react';
 import Tag from 'components/atoms/Tag';
@@ -9,7 +8,7 @@ type Props = PostContent;
 
 const Post = ({ slug, frontmatter, contentHtml }: Props) => {
   return (
-    <Layout>
+    <Layout title={frontmatter.title}>
       <div className='mx-auto max-w-3xl'>
         <div className='justify-center'>
           <h1 className='text-4xl font-bold pb-4'>{frontmatter.title}</h1>
@@ -20,6 +19,7 @@ const Post = ({ slug, frontmatter, contentHtml }: Props) => {
               </span>
             ))}
           </div>
+          <div className='mt-2 mb-2'>{frontmatter.updatedAt}</div>
         </div>
         <div
           className='markdown mt-10 mb-10'

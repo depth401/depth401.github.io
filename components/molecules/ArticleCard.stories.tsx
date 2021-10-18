@@ -39,6 +39,10 @@ export default {
       ],
       type: { name: 'array', required: true },
     },
+    updatedAt: {
+      defaultValue: '2020-01-01',
+      type: { name: 'string', required: true },
+    },
   },
 } as ComponentMeta<typeof ArticleCard>;
 
