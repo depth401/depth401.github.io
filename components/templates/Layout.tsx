@@ -23,7 +23,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
       <main className='flex-1 m-5'>
         <div className='max-w-6xl mx-auto'>{children}</div>
       </main>
-      <Footer owner='depth401' />
+      <Footer owner={settings.siteMetadata.author} />
     </div>
   );
 };
