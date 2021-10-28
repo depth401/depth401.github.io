@@ -48,22 +48,28 @@ body {
     @apply mt-4 mb-4;
   }
 
+  ul {
+    @apply list-disc;
+  }
+
   ul,
   ol {
     @apply ml-4;
     @apply list-inside;
   }
 
-  li {
-    @apply list-disc;
+  ol {
+    @apply list-none;
+    counter-reset: section;
+  }
+
+  ol > li::before {
+    counter-increment: section;
+    content: counters(section, '.') '. ';
   }
 
   .task-list-item {
     @apply list-none;
-  }
-
-  ol > li {
-    @apply list-decimal;
   }
 
   blockquote {
@@ -75,12 +81,9 @@ body {
     @apply mt-6 mb-6;
   }
 
-  table {
-    @apply table-auto;
-  }
-
   a {
     @apply text-blue-500;
+    @apply hover:underline;
   }
 
   h1 > a,
@@ -90,10 +93,29 @@ body {
   h5 > a,
   h6 > a {
     @apply text-black;
+    @apply hover:no-underline;
   }
 
   img {
     @apply mt-6 mt-6;
+  }
+
+  table {
+    @apply table-auto;
+    @apply shadow-sm;
+
+    thead {
+      @apply bg-gray-200;
+
+      th {
+        @apply pl-5 pr-5;
+      }
+    }
+    tbody {
+      td {
+        @apply pl-5 pr-5;
+      }
+    }
   }
 
   pre {

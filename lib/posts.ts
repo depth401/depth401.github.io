@@ -1,16 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeFormat from 'rehype-format';
-import rehypePrism from 'rehype-prism-plus';
-import rehypeSlug from 'rehype-slug';
-import rehypeStringify from 'rehype-stringify';
-import remarkGemoji from 'remark-gemoji';
-import remarkGfm from 'remark-gfm';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import { unified } from 'unified';
+import * as markdown from './markdown';
 
 const postsDirectory = path.join(process.cwd(), 'contents/posts');
 
@@ -60,18 +51,7 @@ export const getPostBySlug = async (slug: string): Promise<PostContent> => {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const { data, content } = matter(fileContents);
-  const processedContent = await unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkGemoji)
-    .use(remarkRehype)
-    .use(rehypePrism)
-    .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
-    .use(rehypeFormat)
-    .use(rehypeStringify)
-    .process(content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = await markdown.toHtml(content);
 
   return {
     slug,

@@ -1,6 +1,7 @@
-import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import Tag from 'components/atoms/Tag';
+
+import * as date from 'lib/date';
 
 export type Props = {
   title: string;
@@ -24,7 +25,7 @@ const ArticleCard = ({ title, href, overview, tags, updatedAt }: Props) => (
           ))}
         </div>
         <div className='flex justify-end pt-2 text-sm text-gray-500'>
-          {format(parseISO(updatedAt), 'yyyy年M月d日')}
+          {date.formatISO(updatedAt)}
         </div>
       </div>
     </a>
