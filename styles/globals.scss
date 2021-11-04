@@ -14,31 +14,31 @@ body {
   h5,
   h6 {
     @apply font-bold font-mono;
-    @apply mt-10 mb-5;
+    @apply mt-8 mb-4;
   }
 
   h1 {
-    @apply text-4xl;
-  }
-
-  h2 {
     @apply text-3xl;
   }
 
-  h3 {
+  h2 {
     @apply text-2xl;
   }
 
-  h4 {
+  h3 {
     @apply text-xl;
   }
 
-  h5 {
+  h4 {
     @apply text-lg;
   }
 
-  h6 {
+  h5 {
     @apply text-base;
+  }
+
+  h6 {
+    @apply text-sm;
   }
 
   p,
@@ -73,8 +73,9 @@ body {
   }
 
   blockquote {
-    @apply border-l-4;
-    @apply ml-4 pl-3;
+    @apply border-l-4 border-gray-300;
+    @apply pt-0.5 pb-0.5 ml-4 pl-3;
+    @apply bg-gray-50;
   }
 
   hr {
@@ -119,9 +120,29 @@ body {
   }
 
   pre {
-    @apply mb-4 p-3;
-    @apply border;
     overflow-x: auto;
+
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    font-size: 0.9em;
+    border: 1px solid #dddddd;
+    background-color: white;
+  }
+
+  pre > code {
+    color: #393a34;
+    font-family: 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier,
+      monospace;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    font-size: 0.9em;
+    line-height: 1.2em;
+    tab-size: 4;
+    hyphens: none;
   }
 }
 
@@ -154,7 +175,10 @@ body {
 }
 
 .line-number::before {
+  display: inline-block;
+  width: 24px;
   padding-right: 16px;
+  margin-left: -8px;
   color: rgb(156, 163, 175); /* Line number color */
   content: attr(line);
 }

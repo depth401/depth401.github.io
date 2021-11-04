@@ -13,25 +13,28 @@ export type PostContent = {
     tags: string[];
     publishedAt: string;
     updatedAt: string;
+    draft: boolean;
   };
   contentHtml: string;
 };
 
 export const getSortedPostsDate = (): PostContent[] => {
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, '');
+  const allPostsData = fileNames
+    .map((fileName) => {
+      const slug = fileName.replace(/\.md$/, '');
 
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    const { data } = matter(fileContents);
+      const { data } = matter(fileContents);
 
-    return {
-      slug,
-      frontmatter: data,
-    } as PostContent;
-  });
+      return {
+        slug,
+        frontmatter: data,
+      } as PostContent;
+    })
+    .filter((content) => !content.frontmatter.draft);
 
   return allPostsData.sort(({ frontmatter: a }, { frontmatter: b }) => {
     if (a.publishedAt < b.publishedAt) {

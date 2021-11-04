@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FaRegCalendarAlt } from 'react-icons/fa';
 import Tag from 'components/atoms/Tag';
 
 import * as date from 'lib/date';
@@ -24,8 +25,11 @@ const ArticleCard = ({ title, href, overview, tags, updatedAt }: Props) => (
             </span>
           ))}
         </div>
-        <div className='flex justify-end pt-2 text-sm text-gray-500'>
-          {date.formatISO(updatedAt)}
+        <div className='inline-box pt-3 text-gray-500'>
+          <FaRegCalendarAlt className='flex-shrink-0 inline-block' />
+          <span className='flex-shrink-0 inline-block pl-2 text-sm align-middle'>
+            {date.formatISO(updatedAt)}
+          </span>
         </div>
       </div>
     </a>

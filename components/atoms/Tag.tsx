@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { DiGit, DiIntellij, DiJsBadge } from 'react-icons/di';
+import { DiIntellij, DiJsBadge } from 'react-icons/di';
 import {
   FaRust,
   FaGithub,

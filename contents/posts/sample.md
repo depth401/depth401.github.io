@@ -23,6 +23,7 @@ tags:
   ]
 publishedAt: '2000-01-01'
 updatedAt: '2000-12-31'
+draft: false
 ---
 
 # 見出し
