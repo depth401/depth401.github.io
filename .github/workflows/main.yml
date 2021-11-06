@@ -23,6 +23,8 @@ jobs:
 
       - name: Build Next.js app
         run: npm run build
+        with:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
 
       - name: Export Next.js app
         run: npm run export
