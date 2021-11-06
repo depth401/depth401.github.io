@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const urlPrefix = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : '';
 
 module.exports = {
