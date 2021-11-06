@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import Tag from 'components/atoms/Tag';
-
 import * as date from 'lib/date';
+import * as gtag from 'lib/gtag';
 
 export type Props = {
   title: string;
@@ -12,9 +12,17 @@ export type Props = {
   updatedAt: string;
 };
 
+const ClickEvent = () => {
+  gtag.event({
+    action: 'click',
+    category: 'link',
+    label: 'article_card',
+  });
+};
+
 const ArticleCard = ({ title, href, overview, tags, updatedAt }: Props) => (
   <Link href={href}>
-    <a>
+    <a onClick={ClickEvent}>
       <div className='p-5 border border-solid border-opacity-0 hover:border-opacity-100 rounded-lg hover:shadow-md hover:border-gray-300'>
         <div className='text-xl font-bold'>{title}</div>
         <div className='pt-2 pb-2'>{overview}</div>
