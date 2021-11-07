@@ -21,7 +21,7 @@ const ClickEvent = () => {
 };
 
 const ArticleCard = ({ title, href, overview, tags, updatedAt }: Props) => (
-  <Link href={href}>
+  <Link href={href} prefetch={false}>
     <a onClick={ClickEvent}>
       <div className='p-5 border border-solid border-opacity-0 hover:border-opacity-100 rounded-lg hover:shadow-md hover:border-gray-300'>
         <div className='text-xl font-bold'>{title}</div>
