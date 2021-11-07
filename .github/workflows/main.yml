@@ -21,13 +21,11 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Create .env file
-        run: |
-          echo "" >> .env
-          echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}" >> .env
-
       - name: Build Next.js app
         run: npm run build
+        env:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+          NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID }}
 
       - name: Export Next.js app
         run: npm run export
