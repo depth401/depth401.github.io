@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import ArticleCards from 'components/organisms/ArticleCards';
 import Layout from 'components/templates/Layout';
@@ -24,9 +25,17 @@ const IndexPage = ({ allPostsData }: Props) => {
     };
   });
   return (
-    <Layout title='Home'>
-      <ArticleCards cards={cards} />
-    </Layout>
+    <>
+      <Head>
+        <meta
+          name='description'
+          content='プログラミングの記事をメインに書いていきたいブログ。'
+        />
+      </Head>
+      <Layout title='Home'>
+        <ArticleCards cards={cards} />
+      </Layout>
+    </>
   );
 };
 

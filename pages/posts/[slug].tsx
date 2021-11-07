@@ -1,4 +1,5 @@
 import 'prism-themes/themes/prism-vs.css';
+import Head from 'next/head';
 import React from 'react';
 import Tag from 'components/atoms/Tag';
 import Layout from 'components/templates/Layout';
@@ -9,27 +10,32 @@ type Props = PostContent;
 
 const Post = ({ slug, frontmatter, contentHtml }: Props) => {
   return (
-    <Layout title={frontmatter.title}>
-      <div className='mx-auto max-w-3xl'>
-        <div className='justify-center'>
-          <h1 className='text-4xl font-bold pb-4'>{frontmatter.title}</h1>
-          <div className='flex flex-wrap flex-row gap-x-1'>
-            {frontmatter.tags.map((tag, index) => (
-              <span key={index} className='h-auto pr-2 pt-2'>
-                <Tag text={tag} />
-              </span>
-            ))}
+    <>
+      <Head>
+        <meta name='description' content={frontmatter.overview} />
+      </Head>
+      <Layout title={frontmatter.title}>
+        <div className='mx-auto max-w-3xl'>
+          <div className='justify-center'>
+            <h1 className='text-4xl font-bold pb-4'>{frontmatter.title}</h1>
+            <div className='flex flex-wrap flex-row gap-x-1'>
+              {frontmatter.tags.map((tag, index) => (
+                <span key={index} className='h-auto pr-2 pt-2'>
+                  <Tag text={tag} />
+                </span>
+              ))}
+            </div>
+            <div className='flex justify-end mt-2 mb-2 text-sm text-gray-500'>
+              {date.formatISO(frontmatter.updatedAt)}
+            </div>
           </div>
-          <div className='flex justify-end mt-2 mb-2 text-sm text-gray-500'>
-            {date.formatISO(frontmatter.updatedAt)}
-          </div>
+          <div
+            className='markdown mt-10 mb-10'
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
+          ></div>
         </div>
-        <div
-          className='markdown mt-10 mb-10'
-          dangerouslySetInnerHTML={{ __html: contentHtml }}
-        ></div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 
