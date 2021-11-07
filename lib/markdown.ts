@@ -21,12 +21,16 @@ export const toHtml = async (markdown: string): Promise<String> => {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkGemoji)
-    .use(remarkRehype)
+    .use(remarkRehype, {
+      allowDangerousHtml: true,
+    })
     .use(rehypePrism)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
     .use(rehypeFormat)
-    .use(rehypeStringify)
+    .use(rehypeStringify, {
+      allowDangerousHtml: true,
+    })
     .process(markdown);
 
   return processed.toString();

@@ -143,3 +143,7 @@ int main(int argc, char **argv) {
 ## gemoji
 
 :+1: :sushi: :thinking:
+
+## HTML
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">あなたにとって、いい推しとは？</p>&mdash; Twitter Japan (@TwitterJP) <a href="https://twitter.com/TwitterJP/status/1456119104931237893?ref_src=twsrc%5Etfw">November 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
