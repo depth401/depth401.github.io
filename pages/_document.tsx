@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
             crossOrigin='anonymous'
           />
           <link
-            href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP&family=Kaisei+Decol&display=optional'
+            href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP&family=Kaisei+Decol&display=swap'
             rel='stylesheet'
           ></link>
         </Head>
