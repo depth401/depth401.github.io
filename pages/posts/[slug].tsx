@@ -48,7 +48,7 @@ type Params = {
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllPostSlugs();
+  const paths = await getAllPostSlugs();
 
   return { paths, fallback: false };
 };

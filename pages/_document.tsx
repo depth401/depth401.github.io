@@ -1,10 +1,15 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import settings from 'settings';
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang='ja'>
         <Head>
+          <meta
+            name='google-site-verification'
+            content={settings.siteMetadata.googleSiteVerification}
+          />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
             rel='preconnect'

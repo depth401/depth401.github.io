@@ -5,6 +5,9 @@ import * as markdown from './markdown';
 
 const postsDirectory = path.join(process.cwd(), 'contents/posts');
 
+const fileNameToSlug = (fileName: string): string =>
+  fileName.replace(/\.md$/, '');
+
 export type PostContent = {
   slug: string;
   frontmatter: {
@@ -22,7 +25,7 @@ export const getSortedPostsDate = (): PostContent[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
     .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '');
+      const slug = fileNameToSlug(fileName);
 
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -63,14 +66,24 @@ export const getPostBySlug = async (slug: string): Promise<PostContent> => {
   } as PostContent;
 };
 
-export const getAllPostSlugs = () => {
+export const getAllPostSlugs = async () => {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        slug: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
+  const contents = await Promise.all(
+    fileNames.map((fileName) => {
+      const slug = fileNameToSlug(fileName);
+
+      return getPostBySlug(slug);
+    }),
+  );
+
+  return contents
+    .filter((content) => !content.frontmatter.draft)
+    .map((content) => {
+      return {
+        params: {
+          slug: content.slug,
+        },
+      };
+    });
 };
