@@ -1,4 +1,3 @@
-import matter from 'gray-matter';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeFormat from 'rehype-format';
 import rehypePrism from 'rehype-prism-plus';
