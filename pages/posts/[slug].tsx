@@ -1,6 +1,7 @@
 import 'prism-themes/themes/prism-vs.css';
 import Head from 'next/head';
 import React from 'react';
+import Date from 'components/atoms/Date';
 import Tag from 'components/atoms/Tag';
 import Layout from 'components/templates/Layout';
 import * as date from 'lib/date';
@@ -25,9 +26,7 @@ const Post = ({ slug, frontmatter, contentHtml }: Props) => {
                 </span>
               ))}
             </div>
-            <div className='flex justify-end mt-2 mb-2 text-sm text-gray-500'>
-              {date.formatISO(frontmatter.updatedAt)}
-            </div>
+            <Date iso8601={frontmatter.updatedAt} />
           </div>
           <div
             className='markdown mt-10 mb-10'
