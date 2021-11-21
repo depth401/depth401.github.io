@@ -16,7 +16,7 @@ const Post = ({ slug, frontmatter, contentHtml }: Props) => {
       </Head>
       <Layout title={frontmatter.title}>
         <div className='mx-auto max-w-3xl'>
-          <div className='p-5 border rounded-lg shadow'>
+          <div className='p-5 border rounded-lg shadow-sm'>
             <div className='justify-center'>
               <h1 className='text-4xl font-bold pb-4'>{frontmatter.title}</h1>
               <div className='flex flex-wrap flex-row gap-x-1'>
