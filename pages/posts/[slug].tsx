@@ -1,18 +1,11 @@
 import 'prism-themes/themes/prism-vs.css';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React from 'react';
-import {
-  TwitterShareButton,
-  TwitterIcon,
-  FacebookShareButton,
-  FacebookIcon,
-} from 'react-share';
 import Date from 'components/atoms/Date';
 import Tag from 'components/atoms/Tag';
+import ShareButtons from 'components/molecules/ShareButtons';
 import Layout from 'components/templates/Layout';
 import { getAllPostSlugs, getPostBySlug, PostContent } from 'lib/posts';
-import settings from 'settings';
 
 type Props = PostContent;
 
@@ -30,7 +23,6 @@ const Post = ({ slug, frontmatter, contentHtml }: Props) => {
       <Date iso8601={frontmatter.updatedAt} />
     </div>
   );
-  const router = useRouter();
 
   return (
     <>
@@ -47,22 +39,8 @@ const Post = ({ slug, frontmatter, contentHtml }: Props) => {
             ></div>
             <hr />
             <div className='mt-5'>
-              <div className='font-bold text-xl'>SHARE</div>
-              <div className='mt-3 flex gap-x-2'>
-                <TwitterShareButton
-                  url={settings.siteMetadata.baseUrl + router.asPath}
-                  title={frontmatter.title}
-                  via={settings.siteMetadata.title}
-                >
-                  <TwitterIcon size={30} round={true}></TwitterIcon>
-                </TwitterShareButton>
-                <FacebookShareButton
-                  url={settings.siteMetadata.baseUrl + router.asPath}
-                  title={frontmatter.title}
-                >
-                  <FacebookIcon size={30} round={true}></FacebookIcon>
-                </FacebookShareButton>
-              </div>
+              <div className='font-bold text-xl mb-3'>SHARE</div>
+              <ShareButtons title={frontmatter.title} />
             </div>
           </div>
         </div>
