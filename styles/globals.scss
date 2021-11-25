@@ -74,7 +74,7 @@ body {
 
   blockquote {
     @apply border-l-4 border-gray-300;
-    @apply pt-0.5 pb-0.5 ml-4 pl-3;
+    @apply pt-0.5 pb-0.5 ml-4 pl-3 pr-3;
     @apply bg-gray-50;
   }
 
@@ -102,18 +102,20 @@ body {
   }
 
   table {
-    @apply table-auto;
+    @apply table-auto border-collapse border border-gray-600;
     @apply shadow-sm;
 
     thead {
       @apply bg-gray-200;
 
       th {
+        @apply border border-gray-400;
         @apply pl-5 pr-5;
       }
     }
     tbody {
       td {
+        @apply border border-gray-400;
         @apply pl-5 pr-5;
       }
     }
