@@ -1,6 +1,7 @@
 import 'prism-themes/themes/prism-vs.css';
 import Head from 'next/head';
 import React from 'react';
+import { Utterances } from 'utterances-react-component';
 import Date from 'components/atoms/Date';
 import Tag from 'components/atoms/Tag';
 import ShareButtons from 'components/molecules/ShareButtons';
@@ -31,7 +32,7 @@ const Post = ({ slug, frontmatter, contentHtml }: Props) => {
       </Head>
       <Layout title={frontmatter.title}>
         <div className='mx-auto max-w-3xl'>
-          <div className='p-5 border rounded-lg shadow-sm'>
+          <div className='p-5 border rounded-lg'>
             {Header}
             <div
               className='markdown mt-10 mb-10'
@@ -42,6 +43,15 @@ const Post = ({ slug, frontmatter, contentHtml }: Props) => {
               <div className='font-bold text-xl mb-3'>SHARE</div>
               <ShareButtons title={frontmatter.title} />
             </div>
+          </div>
+          <div className='mt-5 p-5 border rounded-lg'>
+            <div className='font-bold text-xl'>COMMENT</div>
+            <Utterances
+              repo='depth401/depth401.github.io'
+              theme='github-light'
+              issueTerm='pathname'
+              label='コメント'
+            />
           </div>
         </div>
       </Layout>
