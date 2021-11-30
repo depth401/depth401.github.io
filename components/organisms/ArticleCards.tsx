@@ -7,9 +7,11 @@ type Props = {
 };
 
 const ArticleCards = ({ cards }: Props) => (
-  <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-4'>
+  <div className='flex flex-col gap-y-2'>
     {cards.map((props, index) => (
-      <ArticleCard key={index} {...props} />
+      <>
+        <ArticleCard key={index} {...props} />
+      </>
     ))}
   </div>
 );
