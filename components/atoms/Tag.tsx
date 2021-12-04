@@ -66,7 +66,7 @@ const IconMap = (icon: string) => {
 
 const Tag = ({ text, href }: Props) => {
   const components = (
-    <div className='inline-block pl-3 pr-3 pb-1 border border-gray-300 rounded-full hover:bg-gray-100 hover:shadow-sm'>
+    <div className='inline-block pl-3 pr-3 pb-1 border border-gray-300 rounded-full hover:bg-gray-200 hover:shadow-sm'>
       {IconMap(text)}
       <span className='flex-shrink-0 inline-block text-xs font-bold text-gray-600'>
         {text}
