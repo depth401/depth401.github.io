@@ -120,6 +120,16 @@ int main(int argc, char **argv) {
 }
 ```
 
+コードタイトルを追加。
+
+```c:main.c {4} showLineNumbers
+#include <stdio.h>
+
+int main(int argc, char **argv) {
+    printf("Hello, World!\n");
+}
+```
+
 ## GitHub Flavored Markdown
 
 ### テーブル表示

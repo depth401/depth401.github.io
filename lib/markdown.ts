@@ -1,4 +1,5 @@
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeDocument from 'rehype-document';
 import rehypeFormat from 'rehype-format';
 import rehypeKatex from 'rehype-katex';
@@ -31,6 +32,7 @@ export const toHtml = async (markdown: string): Promise<String> => {
     .use(rehypeDocument, {
       css: 'https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css',
     })
+    .use(rehypeCodeTitles)
     .use(rehypePrism)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
