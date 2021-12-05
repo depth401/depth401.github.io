@@ -10,6 +10,7 @@ tags:
     'GitHub',
     'Haskell',
     'Scala',
+    'Kotlin',
     'Terminal',
     'IntelliJ',
     'Rust',

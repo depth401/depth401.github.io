@@ -12,6 +12,7 @@ import {
   SiTypescript,
   SiHaskell,
   SiScala,
+  SiKotlin,
   SiCss3,
   SiGnuemacs,
   SiSpacemacs,
@@ -39,6 +40,8 @@ const IconMap = (icon: string) => {
       return <FaGithub className={iconClassName} />;
     case 'Haskell':
       return <SiHaskell className={iconClassName} />;
+    case 'Kotlin':
+      return <SiKotlin className={iconClassName} />;
     case 'Scala':
       return <SiScala className={iconClassName} />;
     case 'Terminal':
