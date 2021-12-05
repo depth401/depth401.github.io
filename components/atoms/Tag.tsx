@@ -18,6 +18,7 @@ import {
   SiSpacemacs,
   SiElm,
   SiUbuntu,
+  SiSpring,
 } from 'react-icons/si';
 
 type Props = {
@@ -62,6 +63,8 @@ const IconMap = (icon: string) => {
       return <FaGitAlt className={iconClassName} />;
     case 'Ubuntu':
       return <SiUbuntu className={iconClassName} />;
+    case 'Spring':
+      return <SiSpring className={iconClassName} />;
     default:
       return <></>;
   }
