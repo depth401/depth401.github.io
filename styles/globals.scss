@@ -149,6 +149,7 @@ body {
   }
 
   pre > code {
+    @apply p-0;
     @apply bg-white;
     color: #393a34;
     font-family: 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier,
