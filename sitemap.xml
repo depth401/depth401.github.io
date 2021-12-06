@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://depth401.github.io/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-05T16:32:08.819Z</lastmod></url>
-<url><loc>https://depth401.github.io/about/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-05T16:32:08.820Z</lastmod></url>
-<url><loc>https://depth401.github.io/disclaimer/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-05T16:32:08.820Z</lastmod></url>
-<url><loc>https://depth401.github.io/privacy-policy/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-05T16:32:08.820Z</lastmod></url>
-<url><loc>https://depth401.github.io/posts/Java17/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-05T16:32:08.820Z</lastmod></url>
-<url><loc>https://depth401.github.io/posts/KindlePaperwhiteSignatureEdition/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-05T16:32:08.820Z</lastmod></url>
-<url><loc>https://depth401.github.io/posts/sample/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-05T16:32:08.820Z</lastmod></url>
+<url><loc>https://depth401.github.io/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-06T12:51:45.522Z</lastmod></url>
+<url><loc>https://depth401.github.io/about/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-06T12:51:45.522Z</lastmod></url>
+<url><loc>https://depth401.github.io/disclaimer/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-06T12:51:45.522Z</lastmod></url>
+<url><loc>https://depth401.github.io/privacy-policy/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-06T12:51:45.522Z</lastmod></url>
+<url><loc>https://depth401.github.io/posts/Java17/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-06T12:51:45.522Z</lastmod></url>
+<url><loc>https://depth401.github.io/posts/KindlePaperwhiteSignatureEdition/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-06T12:51:45.522Z</lastmod></url>
+<url><loc>https://depth401.github.io/posts/sample/</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-06T12:51:45.522Z</lastmod></url>
 </urlset>
