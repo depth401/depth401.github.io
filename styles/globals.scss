@@ -138,6 +138,7 @@ body {
   }
 
   pre {
+    font-family: 'Source Code Pro', monospace;
     overflow-x: auto;
 
     padding: 1em;
@@ -152,8 +153,7 @@ body {
     @apply p-0;
     @apply bg-white;
     color: #393a34;
-    font-family: 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier,
-      monospace;
+    font-family: 'Source Code Pro', monospace;
     direction: ltr;
     text-align: left;
     white-space: pre;
@@ -166,7 +166,7 @@ body {
   }
 
   img {
-    @apply rounded-xl shadow-lg;
+    @apply rounded-xl;
   }
 }
 
